@@ -1,4 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://gregorysech.github.io/personal_blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://gregorysech.github.io/personal_blog/" rel="alternate" type="text/html" /><updated>2020-04-19T01:32:23-05:00</updated><id>https://gregorysech.github.io/personal_blog/feed.xml</id><title type="html">Gregory Sech</title><subtitle>Gregory Sech's blog with Jupyter Notebooks thanks to Fastpages.</subtitle><entry><title type="html">Starting my adventure with fastpages.</title><link href="https://gregorysech.github.io/personal_blog/introduction/fastpages/jupyter/2020/04/19/Starting-my-adventure-with-fastpages.html" rel="alternate" type="text/html" title="Starting my adventure with fastpages." /><published>2020-04-19T00:00:00-05:00</published><updated>2020-04-19T00:00:00-05:00</updated><id>https://gregorysech.github.io/personal_blog/introduction/fastpages/jupyter/2020/04/19/Starting-my-adventure-with-fastpages</id><content type="html" xml:base="https://gregorysech.github.io/personal_blog/introduction/fastpages/jupyter/2020/04/19/Starting-my-adventure-with-fastpages.html">&lt;h2 id=&quot;about-me-this-blog-and-i&quot;&gt;About me, this blog and I&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://gregorysech.github.io/personal_blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://gregorysech.github.io/personal_blog/" rel="alternate" type="text/html" /><updated>2020-04-19T16:58:54-05:00</updated><id>https://gregorysech.github.io/personal_blog/feed.xml</id><title type="html">Gregory Sech</title><subtitle>Gregory Sech's blog with Jupyter Notebooks thanks to Fastpages.</subtitle><entry><title type="html">First post up, Nice.</title><link href="https://gregorysech.github.io/personal_blog/github-pages/2020/04/19/First-post-up-Nice.html" rel="alternate" type="text/html" title="First post up, Nice." /><published>2020-04-19T00:00:00-05:00</published><updated>2020-04-19T00:00:00-05:00</updated><id>https://gregorysech.github.io/personal_blog/github-pages/2020/04/19/First-post-up-Nice</id><content type="html" xml:base="https://gregorysech.github.io/personal_blog/github-pages/2020/04/19/First-post-up-Nice.html">&lt;h1 id=&quot;post-publishing-and-moments-of-panic&quot;&gt;Post publishing and moments of panic.&lt;/h1&gt;
+
+&lt;p&gt;So, after doing some little personalization (basically some pruning and setting 
+up the About me section) it’s time to make history.&lt;br /&gt;
+Git add, commit, push and now we wait for the deploy actions to do their job.&lt;br /&gt;
+After letting out my cat I notice that the Actions are all green!&lt;br /&gt;
+YES, success!&lt;br /&gt;
+I rush to click on the link in the README and 404, page not found :(&lt;br /&gt;
+Panic ensures. What did I do wrong? &lt;br /&gt;
+Is it a browser caching problem? CTRL+shift+R, nope :/&lt;br /&gt;
+Is it because the repository was originally 
+private?&lt;br /&gt;
+Searching mechanism settles in and I stumple upon a Github Community post with 
+a similar problem, hopefully someone else had found a simple solution.&lt;br /&gt;
+Someone advices to choose a Jekyll theme however I do not have a selector like 
+in their screenshot I only have the Source brench dropdown available and with 
+the &lt;code class=&quot;highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt; branch selected.&lt;br /&gt;
+Let’s check what that branch contains, looks like a processed static website, 
+at least the website build Action is working.&lt;br /&gt;
+I’mma try changing the branch and then changing it back: the good, old, shut 
+down and restart.&lt;br /&gt;
+Kinda happy that this worked however the prespective of doing this everytime is 
+daunting.&lt;/p&gt;
+
+&lt;h1 id=&quot;so-what-now&quot;&gt;So, what now?&lt;/h1&gt;
+
+&lt;p&gt;This is kind of the first time blogging so, to tranquilize myself, I’ll expose a
+kind of roadmap of topics that will be written about.&lt;br /&gt;
+I really enjoy studying data analysis, both the theoretical part and the 
+practical component.&lt;br /&gt;
+So my “serious” posts will start with an introduction of the concepts of data 
+analysis. I cannot assure how many personal posts I will publish before the 
+first technical one but I hope not many.&lt;br /&gt;
+I have no expectencies about who will read this blog so I will try to start from
+some pretty basic concepts of statistics and machine learning.&lt;br /&gt;
+This will be a pretty useful experience also to review my knowledge before the 
+start of the next academic year.&lt;/p&gt;</content><author><name></name></author><summary type="html">Post publishing and moments of panic.</summary></entry><entry><title type="html">Starting my adventure with fastpages.</title><link href="https://gregorysech.github.io/personal_blog/introduction/fastpages/jupyter/2020/04/19/Starting-my-adventure-with-fastpages.html" rel="alternate" type="text/html" title="Starting my adventure with fastpages." /><published>2020-04-19T00:00:00-05:00</published><updated>2020-04-19T00:00:00-05:00</updated><id>https://gregorysech.github.io/personal_blog/introduction/fastpages/jupyter/2020/04/19/Starting-my-adventure-with-fastpages</id><content type="html" xml:base="https://gregorysech.github.io/personal_blog/introduction/fastpages/jupyter/2020/04/19/Starting-my-adventure-with-fastpages.html">&lt;h1 id=&quot;about-me-this-blog-and-i&quot;&gt;About me, this blog and I&lt;/h1&gt;
 
 &lt;p&gt;My name is Gregory Sech, currently I’m a Computer Science student at Ca’Foscari 
 University of Venice pursuing a Data Science curriculum.&lt;br /&gt;
@@ -13,7 +49,7 @@ about Data Science, heck, it might take a while before the first “real” Data
 Science post to be published. I’d like this blog to be a kind of a journal where
 I will share with whoever finds this fragments of my experiences and thoughts.&lt;/p&gt;
 
-&lt;h2 id=&quot;fastpages-a-choice-of-laziness-procrastination-and-actions&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;fastpages&lt;/code&gt;: a choice of laziness, procrastination and Actions.&lt;/h2&gt;
+&lt;h1 id=&quot;fastpages-a-choice-of-laziness-procrastination-and-actions&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;fastpages&lt;/code&gt;: a choice of laziness, procrastination and Actions.&lt;/h1&gt;
 
 &lt;p&gt;I’m lazy and I will probably always be.&lt;br /&gt;
 My laziness is at the core of my passion for Computer Science.&lt;br /&gt;
@@ -30,7 +66,7 @@ yesterday.&lt;br /&gt;
 Today I woke up quite early and unable to sleep I decided of rolling up my 
 sleeves and starting to integrate this bad boy.&lt;/p&gt;
 
-&lt;h2 id=&quot;my-first-hour-or-so-with-fastpages&quot;&gt;My first hour or so with &lt;code class=&quot;highlighter-rouge&quot;&gt;fastpages&lt;/code&gt;.&lt;/h2&gt;
+&lt;h1 id=&quot;my-first-hour-or-so-with-fastpages&quot;&gt;My first hour or so with &lt;code class=&quot;highlighter-rouge&quot;&gt;fastpages&lt;/code&gt;.&lt;/h1&gt;
 &lt;p&gt;My first half an hour were pretty simple, I’ve ended reading most of the 
 readme about &lt;code class=&quot;highlighter-rouge&quot;&gt;fastpages&lt;/code&gt; and discovered that to use it locally I had to install
 &lt;code class=&quot;highlighter-rouge&quot;&gt;Docker&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;docker-compose&lt;/code&gt;, instruments I’m familiar with thankfully.&lt;br /&gt;
