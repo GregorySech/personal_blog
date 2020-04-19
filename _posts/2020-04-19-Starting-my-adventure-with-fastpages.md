@@ -10,7 +10,7 @@ categories: [introduction, fastpages, jupyter]
 use_math: true
 ---
 
-##  About me, this blog and I
+# About me, this blog and I
 
 My name is Gregory Sech, currently I'm a Computer Science student at Ca'Foscari 
 University of Venice pursuing a Data Science curriculum.  
@@ -25,7 +25,7 @@ about Data Science, heck, it might take a while before the first "real" Data
 Science post to be published. I'd like this blog to be a kind of a journal where
 I will share with whoever finds this fragments of my experiences and thoughts.
 
-## `fastpages`: a choice of laziness, procrastination and Actions.
+# `fastpages`: a choice of laziness, procrastination and Actions.
 
 I'm lazy and I will probably always be.  
 My laziness is at the core of my passion for Computer Science.  
@@ -42,7 +42,7 @@ yesterday.
 Today I woke up quite early and unable to sleep I decided of rolling up my 
 sleeves and starting to integrate this bad boy.  
 
-## My first hour or so with `fastpages`.
+# My first hour or so with `fastpages`.
 My first half an hour were pretty simple, I've ended reading most of the 
 readme about `fastpages` and discovered that to use it locally I had to install
 `Docker` and `docker-compose`, instruments I'm familiar with thankfully.  
