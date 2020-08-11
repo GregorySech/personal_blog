@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Python development with CUDA support on PyCharm and/or Visual Studio Code using Docker | Gregory Sech</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Python development with CUDA support on PyCharm and/or Visual Studio Code using Docker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="How to setup your IDE of choice for Python development based on your own Docker image with CUDA support." />
+<meta property="og:description" content="How to setup your IDE of choice for Python development based on your own Docker image with CUDA support." />
+<link rel="canonical" href="https://gregorysech.github.io/personal_blog/2020/08/11/en-vscode-pycharm-docker-devbox.html" />
+<meta property="og:url" content="https://gregorysech.github.io/personal_blog/2020/08/11/en-vscode-pycharm-docker-devbox.html" />
+<meta property="og:site_name" content="Gregory Sech" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-08-11T00:00:00-05:00" />
+<script type="application/ld+json">
+{"datePublished":"2020-08-11T00:00:00-05:00","headline":"Python development with CUDA support on PyCharm and/or Visual Studio Code using Docker","description":"How to setup your IDE of choice for Python development based on your own Docker image with CUDA support.","mainEntityOfPage":{"@type":"WebPage","@id":"https://gregorysech.github.io/personal_blog/2020/08/11/en-vscode-pycharm-docker-devbox.html"},"@type":"BlogPosting","url":"https://gregorysech.github.io/personal_blog/2020/08/11/en-vscode-pycharm-docker-devbox.html","dateModified":"2020-08-11T00:00:00-05:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/personal_blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://gregorysech.github.io/personal_blog/feed.xml" title="Gregory Sech" /><link rel="shortcut icon" type="image/x-icon" href="/personal_blog/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Python development with CUDA support on PyCharm and/or Visual Studio Code using Docker | Gregory Sech</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Python development with CUDA support on PyCharm and/or Visual Studio Code using Docker" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="How to setup your IDE of choice for Python development based on your own Docker image with CUDA support." />
+<meta property="og:description" content="How to setup your IDE of choice for Python development based on your own Docker image with CUDA support." />
+<link rel="canonical" href="https://gregorysech.github.io/personal_blog/2020/08/11/en-vscode-pycharm-docker-devbox.html" />
+<meta property="og:url" content="https://gregorysech.github.io/personal_blog/2020/08/11/en-vscode-pycharm-docker-devbox.html" />
+<meta property="og:site_name" content="Gregory Sech" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-08-11T00:00:00-05:00" />
+<script type="application/ld+json">
+{"datePublished":"2020-08-11T00:00:00-05:00","headline":"Python development with CUDA support on PyCharm and/or Visual Studio Code using Docker","description":"How to setup your IDE of choice for Python development based on your own Docker image with CUDA support.","mainEntityOfPage":{"@type":"WebPage","@id":"https://gregorysech.github.io/personal_blog/2020/08/11/en-vscode-pycharm-docker-devbox.html"},"@type":"BlogPosting","url":"https://gregorysech.github.io/personal_blog/2020/08/11/en-vscode-pycharm-docker-devbox.html","dateModified":"2020-08-11T00:00:00-05:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://gregorysech.github.io/personal_blog/feed.xml" title="Gregory Sech" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head><body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/personal_blog/">Gregory Sech</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/personal_blog/about/">About Me</a><a class="page-link" href="/personal_blog/search/">Search</a><a class="page-link" href="/personal_blog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Python development with CUDA support on PyCharm and/or Visual Studio Code using Docker</h1><p class="page-description">How to setup your IDE of choice for Python development based on your own Docker image with CUDA support.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-08-11T00:00:00-05:00" itemprop="datePublished">
+        Aug 11, 2020
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      3 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/GregorySech/personal_blog/tree/master/_notebooks/2020-08-11-en-vscode-pycharm-docker-devbox.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/personal_blog/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/GregorySech/personal_blog/master?filepath=_notebooks%2F2020-08-11-en-vscode-pycharm-docker-devbox.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/personal_blog/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/GregorySech/personal_blog/blob/master/_notebooks/2020-08-11-en-vscode-pycharm-docker-devbox.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/personal_blog/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2020-08-11-en-vscode-pycharm-docker-devbox.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Setting-up-PyCharm">Setting up PyCharm<a class="anchor-link" href="#Setting-up-PyCharm"> </a></h2><p>Using a remote Python interpreter from Docker is available only on PyCharm Professional. So, let's see how to setup it up.</p>
+<p>Once you've built your Docker image and opened your project folder in PyCharm navigate to <strong>File &gt; Settings &gt; Project &gt; Python Interpreter</strong>.<br />
+You should see something like this:<br />
+<img src="/personal_blog/images/copied_from_nb/images/pycharm-interpreter.png" alt="Python Interpreter settings" /></p>
+<p>Now click on the little gear near the top-right and add a new Python interpreter.<br />
+Here you will need to select <strong>Docker</strong> and choose the image name you selected before in the dropdown menu called <strong>Image name</strong> like so:
+<img src="/personal_blog/images/copied_from_nb/images/pycharm-image-name.png" alt="Docker Python Interpreter settings" /></p>
+<p>After this configuration is confirmed, wait for the indexing to finish, and try running <code>run.py</code>.</p>
+
+<pre><code>CUDA isn't available :(</code></pre>
+<p>At this point we didn't configure the Run/Debug configuration to have Docker use the GPU but that can be quickly fixed.<br />
+Open the auto-generated Run/Debug configuration and add <code>--gpus all</code> at the end of the Docker container settings.<br />
+You should end up with something like this:<br />
+<img src="/personal_blog/images/copied_from_nb/images/pycharm-docker-container-settings.png" alt="PyCharm Docker container settings" /><br />
+Confirm this configuration and run it, CUDA should result available now!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Setting-up-Visual-Studio-Code">Setting up Visual Studio Code<a class="anchor-link" href="#Setting-up-Visual-Studio-Code"> </a></h2><p>I will rely on the new <a href="https://code.visualstudio.com/docs/remote/remote-overview">Remote Development extensions for Visual Studio Code</a> to setup development through Docker.<br />
+The first step will be installing the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack">Remote Development extension pack</a> and opening the project folder.</p>
+<p>Use the <strong>Add Development Container Configuration Files</strong> command from the Visual Studio command palette.<br />
+Choose to use your own Dockerfile.</p>
+<p>At this point a <code>devcontainer.json</code> file will be created into a <code>.devcontainer</code> directory and it will look like this:</p>
+<div class="highlight"><pre><span></span><span class="err">//</span> <span class="err">For</span> <span class="err">format</span> <span class="err">details,</span> <span class="err">see</span> <span class="err">https://aka.ms/vscode-remote/devcontainer.json</span> <span class="err">or</span> <span class="err">this</span> <span class="err">file&#39;s</span> <span class="err">README</span> <span class="err">at:</span>
+<span class="err">//</span> <span class="err">https://github.com/microsoft/vscode-dev-containers/tree/v</span><span class="mf">0.128</span><span class="err">.</span><span class="mi">0</span><span class="err">/containers/docker-existing-dockerfile</span>
+<span class="p">{</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Existing Dockerfile&quot;</span><span class="p">,</span>
+
+    <span class="err">//</span> <span class="err">Sets</span> <span class="err">the</span> <span class="err">run</span> <span class="err">context</span> <span class="err">to</span> <span class="err">one</span> <span class="err">level</span> <span class="err">up</span> <span class="err">instead</span> <span class="err">of</span> <span class="err">the</span> <span class="err">.devcontainer</span> <span class="err">folder.</span>
+    <span class="nt">&quot;context&quot;</span><span class="p">:</span> <span class="s2">&quot;..&quot;</span><span class="p">,</span>
+
+    <span class="err">//</span> <span class="err">Update</span> <span class="err">the</span> <span class="err">&#39;dockerFile&#39;</span> <span class="err">property</span> <span class="err">if</span> <span class="err">you</span> <span class="err">aren&#39;t</span> <span class="err">using</span> <span class="err">the</span> <span class="err">standard</span> <span class="err">&#39;Dockerfile&#39;</span> <span class="err">filename.</span>
+    <span class="nt">&quot;dockerFile&quot;</span><span class="p">:</span> <span class="s2">&quot;../Dockerfile&quot;</span><span class="p">,</span>
+
+    <span class="err">//</span> <span class="err">Set</span> <span class="err">*default*</span> <span class="err">container</span> <span class="err">specific</span> <span class="err">settings.json</span> <span class="err">values</span> <span class="err">on</span> <span class="err">container</span> <span class="err">create.</span>
+    <span class="nt">&quot;settings&quot;</span><span class="p">:</span> <span class="p">{</span> 
+        <span class="nt">&quot;terminal.integrated.shell.linux&quot;</span><span class="p">:</span> <span class="kc">null</span>
+    <span class="p">},</span>
+
+    <span class="err">//</span> <span class="err">Add</span> <span class="err">the</span> <span class="err">IDs</span> <span class="err">of</span> <span class="err">extensions</span> <span class="err">you</span> <span class="err">want</span> <span class="err">installed</span> <span class="err">when</span> <span class="err">the</span> <span class="err">container</span> <span class="err">is</span> <span class="err">created.</span>
+    <span class="nt">&quot;extensions&quot;</span><span class="p">:</span> <span class="p">[]</span>
+
+    <span class="err">//</span> <span class="err">Use</span> <span class="err">&#39;forwardPorts&#39;</span> <span class="err">to</span> <span class="err">make</span> <span class="err">a</span> <span class="err">list</span> <span class="err">of</span> <span class="err">ports</span> <span class="err">inside</span> <span class="err">the</span> <span class="err">container</span> <span class="err">available</span> <span class="err">locally.</span>
+    <span class="err">//</span> <span class="s2">&quot;forwardPorts&quot;</span><span class="p">:</span> <span class="p">[],</span>
+
+    <span class="err">//</span> <span class="err">Uncomment</span> <span class="err">the</span> <span class="err">next</span> <span class="err">line</span> <span class="err">to</span> <span class="err">run</span> <span class="err">commands</span> <span class="err">after</span> <span class="err">the</span> <span class="err">container</span> <span class="err">is</span> <span class="err">created</span> <span class="err">-</span> <span class="err">for</span> <span class="err">example</span> <span class="err">installing</span> <span class="err">curl.</span>
+    <span class="err">//</span> <span class="nt">&quot;postCreateCommand&quot;</span><span class="p">:</span> <span class="s2">&quot;apt-get update &amp;&amp; apt-get install -y curl&quot;</span><span class="p">,</span>
+
+    <span class="err">//</span> <span class="err">Uncomment</span> <span class="err">when</span> <span class="err">using</span> <span class="err">a</span> <span class="err">ptrace-based</span> <span class="err">debugger</span> <span class="err">like</span> <span class="err">C++,</span> <span class="err">Go,</span> <span class="err">and</span> <span class="err">Rust</span>
+    <span class="err">//</span> <span class="nt">&quot;runArgs&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;--cap-add=SYS_PTRACE&quot;</span><span class="p">,</span> <span class="s2">&quot;--security-opt&quot;</span><span class="p">,</span> <span class="s2">&quot;seccomp=unconfined&quot;</span> <span class="p">],</span>
+
+    <span class="err">//</span> <span class="err">Uncomment</span> <span class="err">to</span> <span class="err">use</span> <span class="err">the</span> <span class="err">Docker</span> <span class="err">CLI</span> <span class="err">from</span> <span class="err">inside</span> <span class="err">the</span> <span class="err">container.</span> <span class="err">See</span> <span class="err">https://aka.ms/vscode-remote/samples/docker-from-docker.</span>
+    <span class="err">//</span> <span class="nt">&quot;mounts&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind&quot;</span> <span class="p">],</span>
+
+    <span class="err">//</span> <span class="err">Uncomment</span> <span class="err">to</span> <span class="err">connect</span> <span class="err">as</span> <span class="err">a</span> <span class="err">non-root</span> <span class="err">user.</span> <span class="err">See</span> <span class="err">https://aka.ms/vscode-remote/containers/non-root.</span>
+    <span class="err">//</span> <span class="nt">&quot;remoteUser&quot;</span><span class="p">:</span> <span class="s2">&quot;vscode&quot;</span>
+<span class="p">}</span>
+</pre></div>
+<p>A prompt to reopen the folder in the container will pop-up.<br />
+Before doing so we just need to select some extensions to use while developing in the container.<br />
+Go to the extensions tab, browse for the extensions you need and you can right click and select <code>Add to devcontainer.json</code> to add them to the configuration.</p>
+<p>Now we just need to add a <code>runArgs</code> key for enabling the GPU and we will be ready to start development.<br />
+Minus the comments you should end up with something like this:</p>
+<div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Existing Dockerfile&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;context&quot;</span><span class="p">:</span> <span class="s2">&quot;..&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;dockerFile&quot;</span><span class="p">:</span> <span class="s2">&quot;../Dockerfile&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;settings&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;terminal.integrated.shell.linux&quot;</span><span class="p">:</span> <span class="kc">null</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;extensions&quot;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="err">//</span> <span class="err">This</span> <span class="err">was</span> <span class="err">added!</span>
+    <span class="nt">&quot;runArgs&quot;</span><span class="p">:</span> <span class="p">[</span> 
+        <span class="s2">&quot;--gpus=all&quot;</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+<p>Now from the command palette we can <code>Rebuild and Reopen in Container</code> and we will be ready to go!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion"> </a></h2><p>Now you have quite a basic development environment configured in your IDE that is based on your own Docker image and all of this with GPU support.<br />
+All that is left is to customize it to fit your project needs and start having fun!</p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><a class="u-url" href="/personal_blog/2020/08/11/en-vscode-pycharm-docker-devbox.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/personal_blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/personal_blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/personal_blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Gregory Sech&#39;s blog with Jupyter Notebooks thanks to Fastpages.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/GregorySech" title="GregorySech"><svg class="svg-icon grey"><use xlink:href="/personal_blog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/SechGregory" title="SechGregory"><svg class="svg-icon grey"><use xlink:href="/personal_blog/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
