@@ -9,13 +9,13 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="How to setup your IDE of choice for Python development based on your own Docker image with CUDA support." />
 <meta property="og:description" content="How to setup your IDE of choice for Python development based on your own Docker image with CUDA support." />
-<link rel="canonical" href="https://gregorysech.github.io/personal_blog/2020/08/11/en-vscode-pycharm-docker-devbox.html" />
-<meta property="og:url" content="https://gregorysech.github.io/personal_blog/2020/08/11/en-vscode-pycharm-docker-devbox.html" />
+<link rel="canonical" href="https://gregorysech.github.io/personal_blog/docker/cuda/python/vscode/pycharm/tutorial/2020/08/11/en-vscode-pycharm-docker-devbox.html" />
+<meta property="og:url" content="https://gregorysech.github.io/personal_blog/docker/cuda/python/vscode/pycharm/tutorial/2020/08/11/en-vscode-pycharm-docker-devbox.html" />
 <meta property="og:site_name" content="Gregory Sech" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-08-11T00:00:00-05:00" />
 <script type="application/ld+json">
-{"datePublished":"2020-08-11T00:00:00-05:00","headline":"Python development with CUDA support on PyCharm and/or Visual Studio Code using Docker","description":"How to setup your IDE of choice for Python development based on your own Docker image with CUDA support.","mainEntityOfPage":{"@type":"WebPage","@id":"https://gregorysech.github.io/personal_blog/2020/08/11/en-vscode-pycharm-docker-devbox.html"},"@type":"BlogPosting","url":"https://gregorysech.github.io/personal_blog/2020/08/11/en-vscode-pycharm-docker-devbox.html","dateModified":"2020-08-11T00:00:00-05:00","@context":"https://schema.org"}</script>
+{"datePublished":"2020-08-11T00:00:00-05:00","headline":"Python development with CUDA support on PyCharm and/or Visual Studio Code using Docker","description":"How to setup your IDE of choice for Python development based on your own Docker image with CUDA support.","mainEntityOfPage":{"@type":"WebPage","@id":"https://gregorysech.github.io/personal_blog/docker/cuda/python/vscode/pycharm/tutorial/2020/08/11/en-vscode-pycharm-docker-devbox.html"},"@type":"BlogPosting","url":"https://gregorysech.github.io/personal_blog/docker/cuda/python/vscode/pycharm/tutorial/2020/08/11/en-vscode-pycharm-docker-devbox.html","dateModified":"2020-08-11T00:00:00-05:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/personal_blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://gregorysech.github.io/personal_blog/feed.xml" title="Gregory Sech" /><link rel="shortcut icon" type="image/x-icon" href="/personal_blog/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Python development with CUDA support on PyCharm and/or Visual Studio Code using Docker | Gregory Sech</title>
@@ -24,13 +24,13 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="How to setup your IDE of choice for Python development based on your own Docker image with CUDA support." />
 <meta property="og:description" content="How to setup your IDE of choice for Python development based on your own Docker image with CUDA support." />
-<link rel="canonical" href="https://gregorysech.github.io/personal_blog/2020/08/11/en-vscode-pycharm-docker-devbox.html" />
-<meta property="og:url" content="https://gregorysech.github.io/personal_blog/2020/08/11/en-vscode-pycharm-docker-devbox.html" />
+<link rel="canonical" href="https://gregorysech.github.io/personal_blog/docker/cuda/python/vscode/pycharm/tutorial/2020/08/11/en-vscode-pycharm-docker-devbox.html" />
+<meta property="og:url" content="https://gregorysech.github.io/personal_blog/docker/cuda/python/vscode/pycharm/tutorial/2020/08/11/en-vscode-pycharm-docker-devbox.html" />
 <meta property="og:site_name" content="Gregory Sech" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-08-11T00:00:00-05:00" />
 <script type="application/ld+json">
-{"datePublished":"2020-08-11T00:00:00-05:00","headline":"Python development with CUDA support on PyCharm and/or Visual Studio Code using Docker","description":"How to setup your IDE of choice for Python development based on your own Docker image with CUDA support.","mainEntityOfPage":{"@type":"WebPage","@id":"https://gregorysech.github.io/personal_blog/2020/08/11/en-vscode-pycharm-docker-devbox.html"},"@type":"BlogPosting","url":"https://gregorysech.github.io/personal_blog/2020/08/11/en-vscode-pycharm-docker-devbox.html","dateModified":"2020-08-11T00:00:00-05:00","@context":"https://schema.org"}</script>
+{"datePublished":"2020-08-11T00:00:00-05:00","headline":"Python development with CUDA support on PyCharm and/or Visual Studio Code using Docker","description":"How to setup your IDE of choice for Python development based on your own Docker image with CUDA support.","mainEntityOfPage":{"@type":"WebPage","@id":"https://gregorysech.github.io/personal_blog/docker/cuda/python/vscode/pycharm/tutorial/2020/08/11/en-vscode-pycharm-docker-devbox.html"},"@type":"BlogPosting","url":"https://gregorysech.github.io/personal_blog/docker/cuda/python/vscode/pycharm/tutorial/2020/08/11/en-vscode-pycharm-docker-devbox.html","dateModified":"2020-08-11T00:00:00-05:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
@@ -112,6 +112,28 @@ window.onload = wrap_img;
 </span></p>
 
     
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/personal_blog/categories/#Docker">Docker</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/personal_blog/categories/#CUDA">CUDA</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/personal_blog/categories/#Python">Python</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/personal_blog/categories/#VSCode">VSCode</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/personal_blog/categories/#PyCharm">PyCharm</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/personal_blog/categories/#Tutorial">Tutorial</a>
+        
+      
+      </p>
+    
 
     
       
@@ -157,12 +179,12 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction"> </a></h2><p>Setting up a development environment is not easy if you are inexperienced, especially if a lot of technologies you wish to learn are involved.<br />
-This tutorial is aimed to show you how to setup a basic Python development environment with CUDA support in PyCharm or Visual Studio Code using Docker.</p>
+This tutorial is aimed to show you how to setup a basic Docker-based Python development environment with CUDA support in PyCharm or Visual Studio Code.</p>
 <h3 id="Disclaimers">Disclaimers<a class="anchor-link" href="#Disclaimers"> </a></h3><ul>
 <li>At the time of writing <strong>I was unable to use CUDA inside of Docker in Windows 10 Home</strong> (even with the Insider build) so this tutorial has been implemented with <strong>Linux</strong> in mind even though there's basically nothing that is platform specific.</li>
 <li>Using Docker as a remote Python interpreter with PyCharm is possible only with the Professional edition.</li>
-<li>I will assume that you <a href="https://www.docker.com/get-started">already installed Docker</a> on your machine. </li>
-<li>I will assume that you already installed <a href="https://developer.nvidia.com/cuda-toolkit">CUDA</a> on your machine. If you are still setting up your Linux machine and you are not willing to research much about it I usually recommend <a href="https://pop.system76.com/">PopOS!</a>. In <a href="https://support.system76.com/articles/cuda/">this article</a> you can find how to setup CUDA and cuDNN very easly on their platform. The article also provides instructions to use their packages on Ubuntu.</li>
+<li>I will assume that you already installed <a href="https://www.docker.com/get-started">Docker</a> on your machine. </li>
+<li>I will assume that you already installed <a href="https://developer.nvidia.com/cuda-toolkit">CUDA</a> on your machine. If you are still setting up your Linux machine and you are not willing to research much about it I usually recommend <a href="https://pop.system76.com/">Pop!_OS</a>. In <a href="https://support.system76.com/articles/cuda/">this article</a> you can find how to setup CUDA and cuDNN very easly on their platform. The article also provides instructions to use their packages on Ubuntu.</li>
 </ul>
 <h2 id="Project-structure">Project structure<a class="anchor-link" href="#Project-structure"> </a></h2><p>I'm just using 3 files in this toy project:</p>
 <ul>
@@ -332,7 +354,7 @@ All that is left is to customize it to fit your project needs and start having f
 
 
 
-  </div><a class="u-url" href="/personal_blog/2020/08/11/en-vscode-pycharm-docker-devbox.html" hidden></a>
+  </div><a class="u-url" href="/personal_blog/docker/cuda/python/vscode/pycharm/tutorial/2020/08/11/en-vscode-pycharm-docker-devbox.html" hidden></a>
 </article>
       </div>
     </main><footer class="site-footer h-card">
