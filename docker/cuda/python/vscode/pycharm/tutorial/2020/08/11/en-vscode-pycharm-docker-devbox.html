@@ -184,7 +184,7 @@ This tutorial is aimed to show you how to setup a basic Docker-based Python deve
 <li>At the time of writing <strong>I was unable to use CUDA inside of Docker in Windows 10 Home</strong> (even with the Insider build) so this tutorial has been implemented with <strong>Linux</strong> in mind even though there's basically nothing that is platform specific.</li>
 <li>Using Docker as a remote Python interpreter with PyCharm is possible only with the Professional edition.</li>
 <li>I will assume that you already installed <a href="https://www.docker.com/get-started">Docker</a> on your machine. </li>
-<li>I will assume that you already installed <a href="https://developer.nvidia.com/cuda-toolkit">CUDA</a> on your machine. If you are still setting up your Linux machine and you are not willing to research much about it I usually recommend <a href="https://pop.system76.com/">Pop!_OS</a>. In <a href="https://support.system76.com/articles/cuda/">this article</a> you can find how to setup CUDA and cuDNN very easly on their platform. The article also provides instructions to use their packages on Ubuntu.</li>
+<li>I will assume that you already installed <a href="https://developer.nvidia.com/cuda-toolkit">CUDA</a> on your machine. If you are still setting up your Linux machine and you are not willing to research much about it I usually recommend <a href="https://pop.system76.com/">Pop!_OS</a>. In <a href="https://support.system76.com/articles/cuda/">this article</a> you can find how to setup CUDA and cuDNN very easily on their platform. The article also provides instructions to use their packages on Ubuntu.</li>
 </ul>
 <h2 id="Project-structure">Project structure<a class="anchor-link" href="#Project-structure"> </a></h2><p>I'm just using 3 files in this toy project:</p>
 <ul>
@@ -194,7 +194,7 @@ This tutorial is aimed to show you how to setup a basic Docker-based Python deve
 Obviously your personal project will most likely be more complex, you may use a different method for dependency management and you might also use a <code>docker-compose.yaml</code> file but for the sake of getting my point through that is pointless complexity.</li>
 </ul>
 <h3 id="Dockerfile">Dockerfile<a class="anchor-link" href="#Dockerfile"> </a></h3><p>For an article more focused on Docker and Dockerfiles I recommend the <a href="https://medium.com/codingthesmartway-com-blog/docker-beginners-guide-part-1-images-containers-6f3507fffc98">Docker Beginner's Guide</a>.<br />
-Here follows our Dockerfile and a brief explaination</p>
+Here follows our Dockerfile and a brief explanation</p>
 <div class="highlight"><pre><span></span><span class="k">FROM</span> <span class="s">nvidia/cuda:10.2-devel</span>
 
 <span class="c"># Miniconda install copy-pasted from Miniconda&#39;s own Dockerfile reachable </span>
@@ -232,7 +232,7 @@ Here follows our Dockerfile and a brief explaination</p>
 <p>In layman's terms a <code>Dockerfile</code> describes a procedure to generate a Docker image that is than used to create Docker containers. This <code>Dockerfile</code> builds on top of the <code>nvidia/cuda:10.2-devel</code> <a href="https://hub.docker.com/r/nvidia/cuda">image made available in DockerHub</a> directly by NVIDIA.<br />
 <code>nvidia/cuda:10.2-devel</code> is a development image with the CUDA 10.2 toolkit already installed.<br />
 Now just need to install what's needed for Python development and setup our project.</p>
-<p>In the middle section of the <code>Dockerfile</code> there is a Miniconda3 installation. I decided to use Miniconda instead of just using Python because it's my go-to platform for most of my projects. We are leveraging <strong>none</strong> of Miniconda capabilities so it is kind of overkill. Swapping out Miniconda with a vannilla installation of Python in the <code>Dockerfile</code> is left to the reader as an execise (do not panic, just use the same commands you would use on a new Ubuntu box).</p>
+<p>In the middle section of the <code>Dockerfile</code> there is a Miniconda3 installation. I decided to use Miniconda instead of just using Python because it's my go-to platform for most of my projects. We are leveraging <strong>none</strong> of Miniconda capabilities so it is kind of overkill. Swapping out Miniconda with a vanilla installation of Python in the <code>Dockerfile</code> is left to the reader as an exercise (do not panic, just use the same commands you would use on a new Ubuntu box).</p>
 <p>The last section is about the project setup, we are just installing the dependencies and copying all the files inside the image work directory and choosing the command to launch when <code>docker run</code> is called without a specified command.</p>
 <p>To build the Docker image just navigate with your shell of choice to the path containing the <code>Dockerfile</code> and run:</p>
 <div class="highlight"><pre><span></span>docker build -t &lt;image_name&gt; .
@@ -262,7 +262,7 @@ torchvision</code></pre>
 You should see something like this:<br />
 <img src="/personal_blog/images/copied_from_nb/images/pycharm-interpreter.png" alt="Python Interpreter settings" /></p>
 <p>Now click on the little gear near the top-right and add a new Python interpreter.<br />
-Here you will need to select <strong>Docker</strong> and choose the image name you selected before in the dropdown menu called <strong>Image name</strong> like so:
+Here you will need to select <strong>Docker</strong> and choose the image name you selected before in the drop-down menu called <strong>Image name</strong> like so:
 <img src="/personal_blog/images/copied_from_nb/images/pycharm-image-name.png" alt="Docker Python Interpreter settings" /></p>
 <p>After this configuration is confirmed, wait for the indexing to finish, and try running <code>run.py</code>.</p>
 
@@ -345,7 +345,7 @@ Minus the comments you should end up with something like this:</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion"> </a></h2><p>Now you have quite a basic development environment configured in your IDE that is based on your own Docker image and all of this with GPU support.<br />
-All that is left is to customize it to fit your project needs and start having fun!</p>
+All that is left is to customise it to fit your project needs and start having fun!</p>
 
 </div>
 </div>
