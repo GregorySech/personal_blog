@@ -3,34 +3,34 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Docker-based Python development with CUDA support on PyCharm and/or Visual Studio Code | Gregory Sech</title>
+<title>Usare Docker per sviluppare in Python con CUDA in PyCharm e/o Visual Studio Code | Gregory Sech</title>
 <meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="Docker-based Python development with CUDA support on PyCharm and/or Visual Studio Code" />
+<meta property="og:title" content="Usare Docker per sviluppare in Python con CUDA in PyCharm e/o Visual Studio Code" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="How to setup your IDE of choice for Python development based on your own Docker image with CUDA support." />
-<meta property="og:description" content="How to setup your IDE of choice for Python development based on your own Docker image with CUDA support." />
-<link rel="canonical" href="https://gregorysech.github.io/personal_blog/docker/cuda/python/vscode/pycharm/tutorial/2020/08/11/en-vscode-pycharm-docker-devbox.html" />
-<meta property="og:url" content="https://gregorysech.github.io/personal_blog/docker/cuda/python/vscode/pycharm/tutorial/2020/08/11/en-vscode-pycharm-docker-devbox.html" />
+<meta name="description" content="Preparare la tua IDE di fiducia per sviluppare con Python usando una tua immagine Docker con supporto a CUDA." />
+<meta property="og:description" content="Preparare la tua IDE di fiducia per sviluppare con Python usando una tua immagine Docker con supporto a CUDA." />
+<link rel="canonical" href="https://gregorysech.github.io/personal_blog/docker/cuda/python/vscode/pycharm/tutorial/italiano/italian/2020/08/12/it-vscode-pycharm-docker-devbox.html" />
+<meta property="og:url" content="https://gregorysech.github.io/personal_blog/docker/cuda/python/vscode/pycharm/tutorial/italiano/italian/2020/08/12/it-vscode-pycharm-docker-devbox.html" />
 <meta property="og:site_name" content="Gregory Sech" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-08-11T00:00:00-05:00" />
+<meta property="article:published_time" content="2020-08-12T00:00:00-05:00" />
 <script type="application/ld+json">
-{"datePublished":"2020-08-11T00:00:00-05:00","headline":"Docker-based Python development with CUDA support on PyCharm and/or Visual Studio Code","description":"How to setup your IDE of choice for Python development based on your own Docker image with CUDA support.","mainEntityOfPage":{"@type":"WebPage","@id":"https://gregorysech.github.io/personal_blog/docker/cuda/python/vscode/pycharm/tutorial/2020/08/11/en-vscode-pycharm-docker-devbox.html"},"@type":"BlogPosting","url":"https://gregorysech.github.io/personal_blog/docker/cuda/python/vscode/pycharm/tutorial/2020/08/11/en-vscode-pycharm-docker-devbox.html","dateModified":"2020-08-11T00:00:00-05:00","@context":"https://schema.org"}</script>
+{"datePublished":"2020-08-12T00:00:00-05:00","headline":"Usare Docker per sviluppare in Python con CUDA in PyCharm e/o Visual Studio Code","description":"Preparare la tua IDE di fiducia per sviluppare con Python usando una tua immagine Docker con supporto a CUDA.","mainEntityOfPage":{"@type":"WebPage","@id":"https://gregorysech.github.io/personal_blog/docker/cuda/python/vscode/pycharm/tutorial/italiano/italian/2020/08/12/it-vscode-pycharm-docker-devbox.html"},"@type":"BlogPosting","url":"https://gregorysech.github.io/personal_blog/docker/cuda/python/vscode/pycharm/tutorial/italiano/italian/2020/08/12/it-vscode-pycharm-docker-devbox.html","dateModified":"2020-08-12T00:00:00-05:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/personal_blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://gregorysech.github.io/personal_blog/feed.xml" title="Gregory Sech" /><link rel="shortcut icon" type="image/x-icon" href="/personal_blog/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Docker-based Python development with CUDA support on PyCharm and/or Visual Studio Code | Gregory Sech</title>
+<title>Usare Docker per sviluppare in Python con CUDA in PyCharm e/o Visual Studio Code | Gregory Sech</title>
 <meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="Docker-based Python development with CUDA support on PyCharm and/or Visual Studio Code" />
+<meta property="og:title" content="Usare Docker per sviluppare in Python con CUDA in PyCharm e/o Visual Studio Code" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="How to setup your IDE of choice for Python development based on your own Docker image with CUDA support." />
-<meta property="og:description" content="How to setup your IDE of choice for Python development based on your own Docker image with CUDA support." />
-<link rel="canonical" href="https://gregorysech.github.io/personal_blog/docker/cuda/python/vscode/pycharm/tutorial/2020/08/11/en-vscode-pycharm-docker-devbox.html" />
-<meta property="og:url" content="https://gregorysech.github.io/personal_blog/docker/cuda/python/vscode/pycharm/tutorial/2020/08/11/en-vscode-pycharm-docker-devbox.html" />
+<meta name="description" content="Preparare la tua IDE di fiducia per sviluppare con Python usando una tua immagine Docker con supporto a CUDA." />
+<meta property="og:description" content="Preparare la tua IDE di fiducia per sviluppare con Python usando una tua immagine Docker con supporto a CUDA." />
+<link rel="canonical" href="https://gregorysech.github.io/personal_blog/docker/cuda/python/vscode/pycharm/tutorial/italiano/italian/2020/08/12/it-vscode-pycharm-docker-devbox.html" />
+<meta property="og:url" content="https://gregorysech.github.io/personal_blog/docker/cuda/python/vscode/pycharm/tutorial/italiano/italian/2020/08/12/it-vscode-pycharm-docker-devbox.html" />
 <meta property="og:site_name" content="Gregory Sech" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-08-11T00:00:00-05:00" />
+<meta property="article:published_time" content="2020-08-12T00:00:00-05:00" />
 <script type="application/ld+json">
-{"datePublished":"2020-08-11T00:00:00-05:00","headline":"Docker-based Python development with CUDA support on PyCharm and/or Visual Studio Code","description":"How to setup your IDE of choice for Python development based on your own Docker image with CUDA support.","mainEntityOfPage":{"@type":"WebPage","@id":"https://gregorysech.github.io/personal_blog/docker/cuda/python/vscode/pycharm/tutorial/2020/08/11/en-vscode-pycharm-docker-devbox.html"},"@type":"BlogPosting","url":"https://gregorysech.github.io/personal_blog/docker/cuda/python/vscode/pycharm/tutorial/2020/08/11/en-vscode-pycharm-docker-devbox.html","dateModified":"2020-08-11T00:00:00-05:00","@context":"https://schema.org"}</script>
+{"datePublished":"2020-08-12T00:00:00-05:00","headline":"Usare Docker per sviluppare in Python con CUDA in PyCharm e/o Visual Studio Code","description":"Preparare la tua IDE di fiducia per sviluppare con Python usando una tua immagine Docker con supporto a CUDA.","mainEntityOfPage":{"@type":"WebPage","@id":"https://gregorysech.github.io/personal_blog/docker/cuda/python/vscode/pycharm/tutorial/italiano/italian/2020/08/12/it-vscode-pycharm-docker-devbox.html"},"@type":"BlogPosting","url":"https://gregorysech.github.io/personal_blog/docker/cuda/python/vscode/pycharm/tutorial/italiano/italian/2020/08/12/it-vscode-pycharm-docker-devbox.html","dateModified":"2020-08-12T00:00:00-05:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
@@ -101,8 +101,8 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Docker-based Python development with CUDA support on PyCharm and/or Visual Studio Code</h1><p class="page-description">How to setup your IDE of choice for Python development based on your own Docker image with CUDA support.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-08-11T00:00:00-05:00" itemprop="datePublished">
-        Aug 11, 2020
+    <h1 class="post-title p-name" itemprop="name headline">Usare Docker per sviluppare in Python con CUDA in PyCharm e/o Visual Studio Code</h1><p class="page-description">Preparare la tua IDE di fiducia per sviluppare con Python usando una tua immagine Docker con supporto a CUDA.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-08-12T00:00:00-05:00" itemprop="datePublished">
+        Aug 12, 2020
       </time>
        • <span class="read-time" title="Estimated read time">
     
@@ -130,6 +130,12 @@ window.onload = wrap_img;
         &nbsp;
       
         <a class="category-tags-link" href="/personal_blog/categories/#Tutorial">Tutorial</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/personal_blog/categories/#Italiano">Italiano</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/personal_blog/categories/#Italian">Italian</a>
         
       
       </p>
@@ -140,19 +146,19 @@ window.onload = wrap_img;
         <div class="pb-5 d-flex flex-wrap flex-justify-end">
           <div class="px-2">
 
-    <a href="https://github.com/GregorySech/personal_blog/tree/master/_notebooks/2020-08-11-en-vscode-pycharm-docker-devbox.ipynb" role="button" target="_blank">
+    <a href="https://github.com/GregorySech/personal_blog/tree/master/_notebooks/2020-08-12-it-vscode-pycharm-docker-devbox.ipynb" role="button" target="_blank">
 <img class="notebook-badge-image" src="/personal_blog/assets/badges/github.svg" alt="View On GitHub">
     </a>
 </div>
 
           <div class="px-2">
-    <a href="https://mybinder.org/v2/gh/GregorySech/personal_blog/master?filepath=_notebooks%2F2020-08-11-en-vscode-pycharm-docker-devbox.ipynb" target="_blank">
+    <a href="https://mybinder.org/v2/gh/GregorySech/personal_blog/master?filepath=_notebooks%2F2020-08-12-it-vscode-pycharm-docker-devbox.ipynb" target="_blank">
         <img class="notebook-badge-image" src="/personal_blog/assets/badges/binder.svg" alt="Open In Binder"/>
     </a>
 </div>
 
           <div class="px-2">
-    <a href="https://colab.research.google.com/github/GregorySech/personal_blog/blob/master/_notebooks/2020-08-11-en-vscode-pycharm-docker-devbox.ipynb" target="_blank">
+    <a href="https://colab.research.google.com/github/GregorySech/personal_blog/blob/master/_notebooks/2020-08-12-it-vscode-pycharm-docker-devbox.ipynb" target="_blank">
         <img class="notebook-badge-image" src="/personal_blog/assets/badges/colab.svg" alt="Open In Colab"/>
     </a>
 </div>
@@ -164,7 +170,7 @@ window.onload = wrap_img;
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
-# file to edit: _notebooks/2020-08-11-en-vscode-pycharm-docker-devbox.ipynb
+# file to edit: _notebooks/2020-08-12-it-vscode-pycharm-docker-devbox.ipynb
 -->
 
 <div class="container" id="notebook-container">
@@ -178,23 +184,29 @@ window.onload = wrap_img;
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction"> </a></h2><p>Setting up a development environment is not easy if you are inexperienced, especially if a lot of technologies you wish to learn are involved.<br />
-This tutorial is aimed to show you how to setup a basic Docker-based Python development environment with CUDA support in PyCharm or Visual Studio Code.</p>
+<h2 id="Introduzione">Introduzione<a class="anchor-link" href="#Introduzione"> </a></h2><p>Mettere in piedi un ambiente di sviluppo non è facile se si è inesperti, specialmente se molte tecnologie che si stanno ancora imparando sono coinvolte.<br />
+Questo tutorial ti mostrerà come usare PyCharm o Visual Studio Code per usare una immagine Docker per sviluppare in Python con supporto a CUDA.</p>
 <h3 id="Disclaimers">Disclaimers<a class="anchor-link" href="#Disclaimers"> </a></h3><ul>
-<li>At the time of writing <strong>I was unable to use CUDA inside of Docker in Windows 10 Home</strong> (even with the Insider build) so this tutorial has been implemented with <strong>Linux</strong> in mind even though there's basically nothing that is platform specific.</li>
-<li>Using Docker as a remote Python interpreter with PyCharm is possible only with the Professional edition.</li>
-<li>I will assume that you already installed <a href="https://www.docker.com/get-started">Docker</a> on your machine. </li>
-<li>I will assume that you already installed <a href="https://developer.nvidia.com/cuda-toolkit">CUDA</a> on your machine. If you are still setting up your Linux machine and you are not willing to research much about it I usually recommend <a href="https://pop.system76.com/">Pop!_OS</a>. In <a href="https://support.system76.com/articles/cuda/">this article</a> you can find how to setup CUDA and cuDNN very easily on their platform. The article also provides instructions to use their packages on Ubuntu.</li>
+<li>Durante la stesura del tutorial <strong>non sono stato in grado di usare CUDA con Docker in Windows 10 Home</strong> (neanche con l'Insider build), quindi è stato pensato con <strong>Linux</strong> in mente anche se non c'è praticamente nulla di specifico ad una singola piattaforma.</li>
+<li>Usare Docker come un interprete Python remoto in PyCharm è possibile solo con l'edizione Professional.</li>
+<li>Suppongo che <a href="https://www.docker.com/get-started">Docker</a> sia già installato correttamente sulla tua macchina.</li>
+<li>Assumo anche che <a href="https://developer.nvidia.com/cuda-toolkit">CUDA</a> sia già installato sulla tua macchina. Se stai ancora configurando la tua macchina con Linux e non hai voglia di spendere troppo tempo a fare ricerche consiglio fortemente la distribuzione <a href="https://pop.system76.com/">Pop!_OS</a>. In <a href="https://support.system76.com/articles/cuda/">questo articolo</a> viene spiegato come installare CUDA e cuDNN molto facilmente sulla loro piattaforma. Inoltre spiegano anche come installare i loro pacchetti su Ubuntu.</li>
 </ul>
-<h2 id="Project-structure">Project structure<a class="anchor-link" href="#Project-structure"> </a></h2><p>I'm just using 3 files in this toy project:</p>
+<h2 id="Struttura-del-progetto">Struttura del progetto<a class="anchor-link" href="#Struttura-del-progetto"> </a></h2><p>Userò solamente 3 file in questo progettino:</p>
 <ul>
-<li>A <code>Dockerfile</code> to generate the container.</li>
-<li>A <code>requirements.txt</code> file that contains the dependencies of the project.</li>
-<li>A <code>single run.py</code> file that contains some code to run.
-Obviously your personal project will most likely be more complex, you may use a different method for dependency management and you might also use a <code>docker-compose.yaml</code> file but for the sake of getting my point through that is pointless complexity.</li>
+<li>Un <code>Dockerfile</code> per generare il container Docker.</li>
+<li>Un file <code>requirements.txt</code> che conterrà le dipendenze Python del progetto.</li>
+<li>Uno script <code>run.py</code> che contiene il codice da eseguire.</li>
 </ul>
-<h3 id="Dockerfile">Dockerfile<a class="anchor-link" href="#Dockerfile"> </a></h3><p>For an article more focused on Docker and Dockerfiles I recommend the <a href="https://medium.com/codingthesmartway-com-blog/docker-beginners-guide-part-1-images-containers-6f3507fffc98">Docker Beginner's Guide</a>.<br />
-Here follows our Dockerfile and a brief explanation</p>
+<p>Ovviamente il tuo progetto sarà più complesso, inoltre è probabile che userai un metodo differente per gestire le tue dipendenze o che vorrai usare <code>docker-compose</code> ma queste sono complessità che sviano dall'obiettivo del tutorial.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Dockerfile">Dockerfile<a class="anchor-link" href="#Dockerfile"> </a></h3><p>Per un articolo più specializzato su Docker ed i Dockerfile consiglio <a href="https://medium.com/codingthesmartway-com-blog/docker-beginners-guide-part-1-images-containers-6f3507fffc98">Docker Beginner's Guide</a>.<br />
+Segue il <code>Dockerfile</code> del progetto ed una spiegazione delle sue parti:</p>
 <div class="highlight"><pre><span></span><span class="k">FROM</span> <span class="s">nvidia/cuda:10.2-devel</span>
 
 <span class="c"># Miniconda install copy-pasted from Miniconda&#39;s own Dockerfile reachable </span>
@@ -229,21 +241,26 @@ Here follows our Dockerfile and a brief explanation</p>
 
 <span class="k">CMD</span> <span class="p">[</span><span class="s2">&quot;python&quot;</span><span class="p">,</span> <span class="s2">&quot;./run.py&quot;</span><span class="p">]</span>
 </pre></div>
-<p>In layman's terms a <code>Dockerfile</code> describes a procedure to generate a Docker image that is than used to create Docker containers. This <code>Dockerfile</code> builds on top of the <code>nvidia/cuda:10.2-devel</code> <a href="https://hub.docker.com/r/nvidia/cuda">image made available in DockerHub</a> directly by NVIDIA.<br />
-<code>nvidia/cuda:10.2-devel</code> is a development image with the CUDA 10.2 toolkit already installed.<br />
-Now just need to install what's needed for Python development and setup our project.</p>
-<p>In the middle section of the <code>Dockerfile</code> there is a Miniconda3 installation. I decided to use Miniconda instead of just using Python because it's my go-to platform for most of my projects. We are leveraging <strong>none</strong> of Miniconda capabilities so it is kind of overkill. Swapping out Miniconda with a vanilla installation of Python in the <code>Dockerfile</code> is left to the reader as an exercise (do not panic, just use the same commands you would use on a new Ubuntu box).</p>
-<p>The last section is about the project setup, we are just installing the dependencies and copying all the files inside the image work directory and choosing the command to launch when <code>docker run</code> is called without a specified command.</p>
-<p>To build the Docker image just navigate with your shell of choice to the path containing the <code>Dockerfile</code> and run:</p>
+<p>In parole povere un <code>Dockerfile</code> descrive che procedura usare per generare un'immagine Docker che poi viene usata per creare un container.<br />
+Il nostro specifico <code>Dockerfile</code> si basa sull'immagine <code>nvidia/cuda:10.2-devel</code> che è resa <a href="https://hub.docker.com/r/nvidia/cuda">pubblicamente disponibile su DockerHub</a> direttamente da NVIDIA.<br />
+<code>nvidia/cuda:10.2-devel</code> è un'immagine di sviluppo con il toolkit CUDA versione 10.2 già installata.<br />
+A questo punto ci mancano gli strumenti necessari per lo sviluppo Python e preparare il nostro progetto.</p>
+<p>La sezione centrale del file contienen l'installazione di Miniconda3. Ho deciso di usare Miniconda al posto della classica installazione di Python perché è la mia piattaforma di riferimento per la maggior parte dei miei progetti.<br />
+Purtroppo stiamo stiamo usando <strong>nessuna</strong> delle capacità di Miniconda quindi è un po' sprecato.<br />
+Sostituire Miniconda con un'installazione vanilla di Python nel <code>Dockerfile</code> è lasciato al lettore come esercizio (ma nessuna paura, basta usare gli stessi comandi che useresti in una nuova installazione di Ubuntu).</p>
+<p>In fine nell'ultima sezione faremo il setup del nostro progetto, nello specifico installiamo le dipendenze necessarie e copiamo tutti i file del progetto nella cartella di lavoro dell'immagine.<br />
+Concludiamo specificando che comando va lanciato se non se ne specifica uno quando si chiama <code>docker run</code>.</p>
+<p>Ora che il nostro <code>Dockerfile</code> è pronto dobbiamo solo costruire l'immagine. Una volta che ci troviamo con la shell nella stessa cartella del <code>Dockerfile</code> dobbiamo solo lanciare:</p>
 <div class="highlight"><pre><span></span>docker build -t &lt;image_name&gt; .
 </pre></div>
-<p>This will generate the Docker image as described by the configuration and give it the name <code>image_name</code>. If in the name no tag is specified <strong>latest</strong> is used as a default. To specify the tag just write it after a colon.<br />
-I will use the name <code>pytorch-development-box</code> for the image in the rest of the tutorial.</p>
-<h3 id="requirements.txt">requirements.txt<a class="anchor-link" href="#requirements.txt"> </a></h3><p>I'm using only Pytorch and Torchvision as the dependencies for this project. I use those packages a lot and I will use their CUDA availability method to check if everything is working. So the content of my <code>requirements.txt</code> is:</p>
+<p>Questo genererà l'immagine Docker come descritto da configurazione e le darà il nome <code>image_name</code>. Se nel nome non è specificato nessun tag <strong>latest</strong> verrà usato come default. Per specificare il tag basta scriverlo dopo i due punti (:).<br />
+Io userò il nome <code>pytorch-development-box</code> per l'immagine.</p>
+<h3 id="requirements.txt">requirements.txt<a class="anchor-link" href="#requirements.txt"> </a></h3><p>Come dipendenze per il progetto userò PyTorch e Torchvision. Sono pacchetti che uso molto spesso e userò un metodo di PyTorch per verificare la disponibilità di CUDA.<br />
+Quindi il contenuto del mio file <code>requirements.txt</code> è:</p>
 
 <pre><code>torch
 torchvision</code></pre>
-<h3 id="run.py">run.py<a class="anchor-link" href="#run.py"> </a></h3><p>My Python file is quite simple, I'm just checking if CUDA is available or not.</p>
+<h3 id="run.py">run.py<a class="anchor-link" href="#run.py"> </a></h3><p>Il mio script Python è molto semplice, verifico solo se CUDA è disponibile o meno.</p>
 <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch.cuda</span>
 
 <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">():</span>
@@ -257,32 +274,34 @@ torchvision</code></pre>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Setting-up-PyCharm">Setting up PyCharm<a class="anchor-link" href="#Setting-up-PyCharm"> </a></h2><p>Using a remote Python interpreter from Docker is available only on PyCharm Professional. So, let's see how to setup it up.</p>
-<p>Once you've built your Docker image and opened your project folder in PyCharm navigate to <strong>File &gt; Settings &gt; Project &gt; Python Interpreter</strong>.<br />
-You should see something like this:<br />
+<h2 id="Impostare-PyCharm">Impostare PyCharm<a class="anchor-link" href="#Impostare-PyCharm"> </a></h2><p>Come da disclaimer faccio nuovamente presente che usare Docker come interprete Python remoto è possibile solo nell'edizione Professional di PyCharm.<br />
+Detto questo vediamo come configurarlo.</p>
+<p>Una volta creata l'immagine Docker apriamo la cartella del nostro progetto in PyCharm.<br />
+Dopodichè navighiamo <strong>File &gt; Settings &gt; Project &gt; Python Interpreter</strong>.<br />
+Dovresti vedere una schermata come questa:<br />
 <img src="/personal_blog/images/copied_from_nb/images/pycharm-interpreter.png" alt="Python Interpreter settings" /></p>
-<p>Now click on the little gear near the top-right and add a new Python interpreter.<br />
-Here you will need to select <strong>Docker</strong> and choose the image name you selected before in the drop-down menu called <strong>Image name</strong> like so:
+<p>Ora facciamo click sull'ingranaggio in alto a destra ed aggiungiamo un nuovo interprete.<br />
+Qua dobbiamo selezionare <strong>Docker</strong> e scegliere dal drop-down chiamato <strong>Image name</strong> l'immagine che abbiamo creato in precedenza, così:
 <img src="/personal_blog/images/copied_from_nb/images/pycharm-image-name.png" alt="Docker Python Interpreter settings" /></p>
-<p>After this configuration is confirmed, wait for the indexing to finish, and try running <code>run.py</code>.</p>
+<p>Dopo aver confermato la configurazione, aspettiamo che finisca di indicizzare, e lanciamo <code>run.py</code>.</p>
 
 <pre><code>CUDA isn't available :(</code></pre>
-<p>At this point we didn't configure the Run/Debug configuration to have Docker use the GPU but that can be quickly fixed.<br />
-Open the auto-generated Run/Debug configuration and add <code>--gpus all</code> at the end of the Docker container settings.<br />
-You should end up with something like this:<br />
+<p>Raggiungiamo questo risultato perchè non abbiamo specificato l'uso di GPU con Docker nella configurazione di Lancio/Debug ma è facile sistemare questo problema.<br />
+Apriamo la configurazione auto-generata e aggiungiamo <code>--gpus all</code> alla fine delle impostazioni del container Docker.
+Dovresti finire con qualcosa del genere:<br />
 <img src="/personal_blog/images/copied_from_nb/images/pycharm-docker-container-settings.png" alt="PyCharm Docker container settings" /><br />
-Confirm this configuration and run it, CUDA should result available now!</p>
+Conferma la configurazione e rilanciala, CUDA ora dovrebbe essere disponibile.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Setting-up-Visual-Studio-Code">Setting up Visual Studio Code<a class="anchor-link" href="#Setting-up-Visual-Studio-Code"> </a></h2><p>I will rely on the new <a href="https://code.visualstudio.com/docs/remote/remote-overview">Remote Development extensions for Visual Studio Code</a> to setup development through Docker.<br />
-The first step will be installing the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack">Remote Development extension pack</a> and opening the project folder.</p>
-<p>Use the <strong>Add Development Container Configuration Files</strong> command from the Visual Studio command palette.<br />
-Choose to use your own Dockerfile.</p>
-<p>At this point a <code>devcontainer.json</code> file will be created into a <code>.devcontainer</code> directory and it will look like this:</p>
+<h2 id="Impostare-Visual-Studio-Code">Impostare Visual Studio Code<a class="anchor-link" href="#Impostare-Visual-Studio-Code"> </a></h2><p>Userò le <a href="https://code.visualstudio.com/docs/remote/remote-overview">estensioni per lo Sviluppo Remoto di Visual Studio Code</a> per impostare lo sviluppo con Docker.<br />
+Quindi come primo passo installiamo il pacchetto di estensioni <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack">Remote Development extension pack</a> ed apriamo la cartella del progetto.</p>
+<p>Usiamo il comando <strong>Add Development Container Configuration Files</strong> dalla palette dei comandi di Visual Studio Code e scegliamo di usare il nostro <code>Dockerfile</code>.</p>
+<p>Un file <code>devcontainer.json</code> verrà creato in una cartella <code>.devcontainer</code>.<br />
+Questo file avrà un contenuto simile a questo:</p>
 <div class="highlight"><pre><span></span><span class="err">//</span> <span class="err">For</span> <span class="err">format</span> <span class="err">details,</span> <span class="err">see</span> <span class="err">https://aka.ms/vscode-remote/devcontainer.json</span> <span class="err">or</span> <span class="err">this</span> <span class="err">file&#39;s</span> <span class="err">README</span> <span class="err">at:</span>
 <span class="err">//</span> <span class="err">https://github.com/microsoft/vscode-dev-containers/tree/v</span><span class="mf">0.128</span><span class="err">.</span><span class="mi">0</span><span class="err">/containers/docker-existing-dockerfile</span>
 <span class="p">{</span>
@@ -318,11 +337,11 @@ Choose to use your own Dockerfile.</p>
     <span class="err">//</span> <span class="nt">&quot;remoteUser&quot;</span><span class="p">:</span> <span class="s2">&quot;vscode&quot;</span>
 <span class="p">}</span>
 </pre></div>
-<p>A prompt to reopen the folder in the container will pop-up.<br />
-Before doing so we just need to select some extensions to use while developing in the container.<br />
-Go to the extensions tab, browse for the extensions you need and you can right click and select <code>Add to devcontainer.json</code> to add them to the configuration.</p>
-<p>Now we just need to add a <code>runArgs</code> key for enabling the GPU and we will be ready to start development.<br />
-Minus the comments you should end up with something like this:</p>
+<p>Apparirà un pop-up per riaprire il progetto nel container.<br />
+Prima di procedere dobbiamo scegliere che estensioni usare per lo sviluppo nel container e permettere l'uso delle GPU a Docker.<br />
+Andiamo quindi nel tab delle estensioni, cerchiamo le estensioni che ci servono e facendo click con il tasto destro sull'estensione che ci interessa scegliamo <code>Add to devcontainer.json</code> per aggiungerla alla configurazione.</p>
+<p>Ora dobbiamo aggiungere una chiave <code>runArgs</code> per usare le GPU e saremo pronti per lo sviluppo.<br />
+Escludendo i commenti il nostro file <code>devcontainer.json</code> assomiglierà a questo</p>
 <div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Existing Dockerfile&quot;</span><span class="p">,</span>
     <span class="nt">&quot;context&quot;</span><span class="p">:</span> <span class="s2">&quot;..&quot;</span><span class="p">,</span>
@@ -339,15 +358,15 @@ Minus the comments you should end up with something like this:</p>
     <span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
-<p>Now from the command palette we can <code>Rebuild and Reopen in Container</code> and we will be ready to go!</p>
+<p>Ora dalla palette dei comandi possiamo scegliere <code>Rebuild and Reopen in Container</code> ed il nostro ambiente di sviluppo sarà pronto dopo il caricamento!</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion"> </a></h2><p>Now you have quite a basic development environment configured in your IDE that is based on your own Docker image and all of this with GPU support.<br />
-All that is left is to customise it to fit your project needs and start having fun!</p>
+<h2 id="Conclusione">Conclusione<a class="anchor-link" href="#Conclusione"> </a></h2><p>Ora hai un semplice ambiente di sviluppo configurato nella tua IDE basato su una tua immagine Docker con supporto alla GPU.<br />
+Tutto ciò che ti rimane da fare è personalizzare l'ambiente per le necessità del tuo progetto e divertirti!</p>
 
 </div>
 </div>
@@ -356,7 +375,7 @@ All that is left is to customise it to fit your project needs and start having f
 
 
 
-  </div><a class="u-url" href="/personal_blog/docker/cuda/python/vscode/pycharm/tutorial/2020/08/11/en-vscode-pycharm-docker-devbox.html" hidden></a>
+  </div><a class="u-url" href="/personal_blog/docker/cuda/python/vscode/pycharm/tutorial/italiano/italian/2020/08/12/it-vscode-pycharm-docker-devbox.html" hidden></a>
 </article>
       </div>
     </main><footer class="site-footer h-card">
