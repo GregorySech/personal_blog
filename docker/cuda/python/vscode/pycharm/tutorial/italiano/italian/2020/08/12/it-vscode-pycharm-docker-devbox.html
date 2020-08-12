@@ -245,8 +245,8 @@ Segue il <code>Dockerfile</code> del progetto ed una spiegazione delle sue parti
 Il nostro specifico <code>Dockerfile</code> si basa sull'immagine <code>nvidia/cuda:10.2-devel</code> che è resa <a href="https://hub.docker.com/r/nvidia/cuda">pubblicamente disponibile su DockerHub</a> direttamente da NVIDIA.<br />
 <code>nvidia/cuda:10.2-devel</code> è un'immagine di sviluppo con il toolkit CUDA versione 10.2 già installata.<br />
 A questo punto ci mancano gli strumenti necessari per lo sviluppo Python e preparare il nostro progetto.</p>
-<p>La sezione centrale del file contienen l'installazione di Miniconda3. Ho deciso di usare Miniconda al posto della classica installazione di Python perché è la mia piattaforma di riferimento per la maggior parte dei miei progetti.<br />
-Purtroppo stiamo stiamo usando <strong>nessuna</strong> delle capacità di Miniconda quindi è un po' sprecato.<br />
+<p>La sezione centrale del file contiene l'installazione di Miniconda3. Ho deciso di usare Miniconda al posto della classica installazione di Python perché è la mia piattaforma di riferimento per la maggior parte dei miei progetti.<br />
+Purtroppo stiamo usando <strong>nessuna</strong> delle capacità di Miniconda quindi è un po' sprecato.<br />
 Sostituire Miniconda con un'installazione vanilla di Python nel <code>Dockerfile</code> è lasciato al lettore come esercizio (ma nessuna paura, basta usare gli stessi comandi che useresti in una nuova installazione di Ubuntu).</p>
 <p>In fine nell'ultima sezione faremo il setup del nostro progetto, nello specifico installiamo le dipendenze necessarie e copiamo tutti i file del progetto nella cartella di lavoro dell'immagine.<br />
 Concludiamo specificando che comando va lanciato se non se ne specifica uno quando si chiama <code>docker run</code>.</p>
